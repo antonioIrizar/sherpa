@@ -6,7 +6,7 @@ El proyecto por comodida esta usando el servidor de django, pero para producció
 ## Prerequisitos
 
 * Se necesita tener docker y docker compose instalado para poder ejecutar el proyecto en local.
-* Antes de arrancarlo hay que rellenar la variable de entorno **GEONAMES_USERNAME** con el nombre de usuario de https://www.geonames.org si no se podra acceder a la api.
+* Antes de arrancarlo hay que crear el fichero.env. Para ello duplciarlo del fichero .evn.local y se ha de rellenar la variable de entorno **GEONAMES_USERNAME** con el nombre de usuario de https://www.geonames.org si no se podra acceder a la api.
 * Se ha de tener libre los puertos **8086** y **5452** para que django y la base de datos puedan arrancar. Si estan ocupados se pueden cambiar en el docker compose.
 
 ## Iniciar 
