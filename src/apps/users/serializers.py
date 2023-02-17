@@ -1,3 +1,4 @@
+from django.db import transaction
 from rest_framework import serializers
 
 from . import models
@@ -18,6 +19,7 @@ class MasterSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Invalid postcode")
         return value
 
+    @transaction.atomic
     def create(self, validated_data: dict) -> models.Master:
         detail, _ = models.Detail.objects.get_or_create(
             postcode=validated_data["detail"]["postcode"], city=self._city
